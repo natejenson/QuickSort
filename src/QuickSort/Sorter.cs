@@ -14,7 +14,12 @@ namespace QuickSort
 
 		private static void QuickSort(int[] arr, int low, int high)
 		{
-			
+			throw new NotImplementedException();
+		}
+
+		private static int Partition(int[] arr, int low, int high)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

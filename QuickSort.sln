@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "QuickSort", "src\QuickSort\QuickSort.xproj", "{7742CF0A-F470-4DA5-AAE8-893CBBCAD3BE}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "QuickSortTests", "src\QuickSortTests\QuickSortTests.xproj", "{6F0E94CC-B85E-45A2-BD79-EC5EBCBA78B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +24,16 @@ Global
 		{7742CF0A-F470-4DA5-AAE8-893CBBCAD3BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7742CF0A-F470-4DA5-AAE8-893CBBCAD3BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7742CF0A-F470-4DA5-AAE8-893CBBCAD3BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F0E94CC-B85E-45A2-BD79-EC5EBCBA78B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F0E94CC-B85E-45A2-BD79-EC5EBCBA78B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F0E94CC-B85E-45A2-BD79-EC5EBCBA78B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F0E94CC-B85E-45A2-BD79-EC5EBCBA78B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7742CF0A-F470-4DA5-AAE8-893CBBCAD3BE} = {61FFD2B3-0CE2-4E9F-B306-C6167D60C609}
+		{6F0E94CC-B85E-45A2-BD79-EC5EBCBA78B5} = {61FFD2B3-0CE2-4E9F-B306-C6167D60C609}
 	EndGlobalSection
 EndGlobal
