@@ -9,7 +9,7 @@ namespace QuickSort
 		{
 			int[] sample = {4, 2, 8, 5, 9, 4, 0, 3, 7};
 			Console.WriteLine($"Input:  {Stringify(sample)}");
-			Sorter.QuickSort(sample);
+			Quicksort.Sort(sample);
 			Console.WriteLine($"Output: {Stringify(sample)}");
 			Console.Read();
 		}

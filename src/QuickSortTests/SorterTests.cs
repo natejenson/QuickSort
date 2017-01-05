@@ -10,14 +10,14 @@ namespace QuickSortTests
 		public void QuickSort_GivenNull_ThrowsException()
 		{
 			int[] t = null;
-			Assert.Throws<ArgumentException>(() => Sorter.QuickSort(t));
+			Assert.Throws<ArgumentException>(() => Quicksort.Sort(t));
 		}
 
 		[Fact]
 		public void QuickSort_GivenEmpty_RemainsEmpty()
 		{
 			int[] t = {};
-			Sorter.QuickSort(t);
+			Quicksort.Sort(t);
 			Assert.True(t.Length == 0);
 		}
 
@@ -25,7 +25,7 @@ namespace QuickSortTests
 		public void QuickSort_OneElement_IsSorted()
 		{
 			int[] t = {1};
-			Sorter.QuickSort(t);
+			Quicksort.Sort(t);
 			Assert.True(IsSorted(t));
 		}
 
@@ -34,7 +34,7 @@ namespace QuickSortTests
 		{
 			int[] t = {1, 2, 3};
 			Assert.True(IsSorted(t));
-			Sorter.QuickSort(t);
+			Quicksort.Sort(t);
 			Assert.True(IsSorted(t));
 		}
 
@@ -43,7 +43,7 @@ namespace QuickSortTests
 		{
 			int[] t = { 3, 5, 6, 3, 9, 0, 1, 3 };
 			Assert.False(IsSorted(t));
-			Sorter.QuickSort(t);
+			Quicksort.Sort(t);
 			Assert.True(IsSorted(t));
 		}
 
@@ -51,7 +51,7 @@ namespace QuickSortTests
 		{
 			int[] t = { 4, 2, 8, 5, 9, 0, 3, 7 };
 			Assert.False(IsSorted(t));
-			Sorter.QuickSort(t);
+			Quicksort.Sort(t);
 			Assert.True(IsSorted(t));
 		}
 
