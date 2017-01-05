@@ -1,23 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace QuickSort
 {
-	public class Quicksort
+	public static class Quicksort
 	{
-		public static void Sort(int[] arr)
+		public static void Sort<T>(IList<T> items) where T : IComparable<T>
 		{
-			if (arr == null)
+			if (items == null)
 			{
 				throw new ArgumentException("The input array cannot be null");
 			}
-			if (arr.Length <= 1)
+			if (items.Count <= 1)
 			{
 				return;
 			}
-			Sort(arr, 0, arr.Length - 1);
+			Sort(items, 0, items.Count - 1);
 		}
 
-		private static void Sort(int[] arr, int low, int high)
+		private static void Sort<T>(IList<T> items, int low, int high) where T : IComparable<T>
 		{
 			if (low >= high) { return; }
 
@@ -27,24 +28,24 @@ namespace QuickSort
 
 			while (pivot > cur)
 			{
-				if (arr[pivot] > arr[cur])
+				if (items[pivot].CompareTo(items[cur]) > 0)
 				{
-					Swap(arr, cur, wall);
+					Swap(items, cur, wall);
 					wall++;
 				}
 				cur++;
 			}
-			Swap(arr, pivot, wall);
+			Swap(items, pivot, wall);
 
-			Sort(arr, low, wall - 1);
-			Sort(arr, wall + 1, high);
+			Sort(items, low, wall - 1);
+			Sort(items, wall + 1, high);
 		}
 
-		private static void Swap(int[] arr, int indexA, int indexB)
+		private static void Swap<T>(IList<T> items, int indexA, int indexB)
 		{
-			var temp = arr[indexA];
-			arr[indexA] = arr[indexB];
-			arr[indexB] = temp;
+			var temp = items[indexA];
+			items[indexA] = items[indexB];
+			items[indexB] = temp;
 		}
 	}
 }

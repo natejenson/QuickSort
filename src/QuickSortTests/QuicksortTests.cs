@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using QuickSort;
 using Xunit;
 
 namespace QuickSortTests
 {
-	public class SorterTests
+	public class QuicksortTests
 	{
 		[Fact]
 		public void QuickSort_GivenNull_ThrowsException()
@@ -55,24 +56,25 @@ namespace QuickSortTests
 			Assert.True(IsSorted(t));
 		}
 
-		private static bool IsSorted(int[] arr)
+		private static bool IsSorted<T>(IList<T> items) where T : IComparable<T>
 		{
-			if (arr == null)
+			if (items == null)
 			{
 				throw new ArgumentException("The input array cannot be null.");
 			}
-			if (arr.Length <= 1)
+			if (items.Count <= 1)
 			{
 				return true;
 			}
 
-			int last = arr[0];
-			for (int i = 1; i < arr.Length; i++)
+			var last = items[0];
+			for (int i = 1; i < items.Count; i++)
 			{
-				if (last > arr[i])
+				if (last.CompareTo(items[i]) > 0)
 				{
 					return false;
 				}
+				last = items[i];
 			}
 			return true;
 		}
