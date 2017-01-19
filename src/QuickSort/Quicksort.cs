@@ -22,23 +22,40 @@ namespace QuickSort
 		{
 			if (low >= high) { return; }
 
+			int wall = Partition(items, low, high);
+			Sort(items, low, wall - 1);
+			Sort(items, wall + 1, high);
+		}
+
+		/// <summary>
+		/// Partitions the array around a pivot such that all elements to left left of the pivot
+		/// are less than or equal to the pivot, and all elements to the right are greater than or equal
+		/// to the pivot.
+		/// </summary>
+		/// <typeparam name="T">The type of the items being partitioned.</typeparam>
+		/// <param name="items">The array to partition</param>
+		/// <param name="low">The lower bound index (inclusive) of the partitioning.</param>
+		/// <param name="high">The upper bound index (inclusive) of the partitioning.</param>
+		/// <returns>The index of the pivot that was chosen.</returns>
+		private static int Partition<T>(IList<T> items, int low, int high) where T : IComparable<T>
+		{
 			int wall = low;
 			int cur = low;
-			int pivot = high;
+			int mid = low + (high - low) / 2;
+			T pivot = items[mid];
+			Swap(items, mid, high);
 
-			while (pivot > cur)
+			while (cur < high)
 			{
-				if (items[pivot].CompareTo(items[cur]) > 0)
+				if (pivot.CompareTo(items[cur]) > 0)
 				{
 					Swap(items, cur, wall);
 					wall++;
 				}
 				cur++;
 			}
-			Swap(items, pivot, wall);
-
-			Sort(items, low, wall - 1);
-			Sort(items, wall + 1, high);
+			Swap(items, high, wall);
+			return wall;
 		}
 
 		private static void Swap<T>(IList<T> items, int indexA, int indexB)
